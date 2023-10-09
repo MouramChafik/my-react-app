@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 function PokemonCard(props) {
   const { pokemon } = props; // Utilisation de la destructuration pour accéder à props.pokemon
@@ -15,5 +17,13 @@ function PokemonCard(props) {
     </div>
   );
 }
+
+PokemonCard.propTypes = {
+  pokemon : PropTypes.shape({
+    name : PropTypes.string.isRequired,
+    imgSrc : PropTypes.string,
+  }).isRequired,
+};
+
 
 export default PokemonCard;
