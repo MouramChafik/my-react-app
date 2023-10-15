@@ -2,14 +2,20 @@
 
 import React from 'react';
 
-function NavBar({ pokemonIndex, handlePrevClick, handleNextClick }) {
-  return (
-    <div className="button-container">
-      <button onClick={handlePrevClick}>Précédent</button>
-      <button onClick={handleNextClick}>Suivant</button>
-    </div>
-  );
+function NavBar({ pokemonList, handlePokemonClick, selectedPokemonIndex }) {
+    return (
+        <div className="button-container">
+            {pokemonList.map((pokemon, index) => (
+                <button
+                    key={index} 
+                    onClick={() => handlePokemonClick(index)} 
+                    className={selectedPokemonIndex === index ? "active" : ""} // Applique une classe pour le style actif.
+                >
+                    {pokemon.name}
+                </button>
+            ))}
+        </div>
+    );
 }
 
 export default NavBar;
-
