@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PokemonCard from './components/PokemonCard';
 import './App.css'
 import NavBar from './components/NavBar';
-
+import { useEffect } from 'react';
 
 
 const pokemonList = [
@@ -37,6 +37,9 @@ const pokemonList = [
       setSelectedPokemonIndex(index);
   };
 
+    useEffect(() => {
+      alert('Hello Pokemon Trainer :)');
+    }, []);
 
 
     return (
